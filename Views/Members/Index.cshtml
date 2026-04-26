@@ -1,0 +1,24 @@
+@model IEnumerable<FitCore.Models.Member>
+
+<h2>Gym Members</h2>
+<a asp-action="Create" class="btn btn-primary mb-3">Add New Member</a>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Full Name</th>
+            <th>Phone Number</th>
+            <th>Registration Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FullName</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.RegistrationDate.ToString("dd/MM/yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>
